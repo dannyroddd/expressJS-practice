@@ -8,6 +8,13 @@ app.get('/greeting/:name', (req, res)=>{
     res.send('Hello ' + req.params.name + ', It is so great to see you! How are you?')
 })
 
+app.get('/total/:tip/:tipPercentage', (req, res)=>{
+    console.log(req.params)
+    const tip = parseInt(req.params.tip)
+    const tipPercentage = parseInt(req.params.tipPercentage)
+    const quotient = (tip / tipPercentage).toString()
+    res.send(quotient)
+})
 
 
 
